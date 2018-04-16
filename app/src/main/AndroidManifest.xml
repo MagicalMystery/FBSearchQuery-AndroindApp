@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.fbsearch.searchonfb">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider1896430143959664"
+            android:exported="true" />
+
+        <activity
+            android:name=".HomeActivity"
+            android:alwaysRetainTaskState="true"
+            android:label="@string/app_name"
+            android:launchMode="singleInstance"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ResultActivity"
+            android:alwaysRetainTaskState="true"
+            android:label="@string/title_activity_result"
+            android:launchMode="singleInstance"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.fbsearch.searchonfb.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".MainTabAcivity"
+            android:alwaysRetainTaskState="true"
+            android:label="Results"
+            android:launchMode="singleInstance"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DetailsTabActivity"
+            android:alwaysRetainTaskState="true"
+            android:label="More Details"
+            android:launchMode="singleInstance"
+            android:parentActivityName=".MainTabAcivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.fbsearch.searchonfb.MainTabAcivity" />
+        </activity>
+        <activity
+            android:name=".FavTabActivity"
+            android:alwaysRetainTaskState="true"
+            android:label="Favourites"
+            android:launchMode="singleInstance"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.fbsearch.searchonfb.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".AboutMe"
+            android:label="@string/title_activity_about_me"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.fbsearch.searchonfb.HomeActivity" />
+        </activity>
+    </application>
+
+</manifest>
